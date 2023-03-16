@@ -15,7 +15,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     ProductComponent
   ],
   exports: [
-    ProductListComponent
+    ProductListComponent,
+    ProductDetailComponent
   ]
 })
 export class ProductsModule { }
