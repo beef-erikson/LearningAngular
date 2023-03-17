@@ -1,4 +1,5 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input,
+  Output, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,7 +8,7 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class ProductDetailComponent {
+export class ProductDetailComponent implements OnInit {
   @Input() name = '';
   @Output() bought = new EventEmitter<string>();
 
@@ -15,6 +16,15 @@ export class ProductDetailComponent {
     console.log(`Get ${this.name}`);
     return this.name;
   }
+
+  constructor() {
+    console.log(`name is ${this.name} in the constructor.`)
+  }
+
+  ngOnInit(): void {
+    console.log(`name is ${this.name} in the ngOnInit().`)
+  }
+
   buy() {
     this.bought.emit(this.name)
   }
