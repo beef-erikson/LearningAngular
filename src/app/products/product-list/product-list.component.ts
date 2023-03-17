@@ -5,9 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
+
 export class ProductListComponent {
-  selectedProduct = ''
-  onBuy() {
-    window.alert('You just bought ${this.selectedProduct}!');
+  selectedProduct = '';
+  onBuy(name: string) {
+    window.alert(`You just bought ${name}`);
   }
 }
