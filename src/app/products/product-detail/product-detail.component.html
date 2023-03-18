@@ -1,6 +1,7 @@
 <div *ngIf="product">
   <h2>Product details</h2>
   <h3>{{product.name}}</h3>
+  <span>{{product.price | currency:'USD'}}</span>
 
   <div [ngSwitch]="product.name">
     <p *ngSwitchCase="'Webcam'">
