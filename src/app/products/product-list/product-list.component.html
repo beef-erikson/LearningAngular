@@ -6,7 +6,11 @@
 </ul>
 
 <app-product-detail
-  #product
+  *ngIf="selectedProduct; else noProduct"
   [name]="selectedProduct"
   (bought)="onBuy($event)">
 </app-product-detail>
+
+<ng-template #noProduct>
+  <p>No product selected.</p>
+</ng-template>
