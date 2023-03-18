@@ -8,7 +8,8 @@ import { ProductDetailComponent } from "../product-detail/product-detail.compone
 })
 
 export class ProductListComponent implements AfterViewInit{
-  selectedProduct = '';
+  products = ['Webcam', 'Microphone', 'Wireless Keyboard']
+  selectedProduct = ''
 
   @ViewChild(ProductDetailComponent) productDetail:
     ProductDetailComponent | undefined;
@@ -22,5 +23,9 @@ export class ProductListComponent implements AfterViewInit{
 
   onBuy(name: string) {
     window.alert(`You just bought ${name}`);
+  }
+
+  trackByProducts(index: number, name: string): string{
+    return name;
   }
 }
