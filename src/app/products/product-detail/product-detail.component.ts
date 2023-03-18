@@ -12,11 +12,6 @@ export class ProductDetailComponent implements OnInit, OnChanges {
   @Input() name = '';
   @Output() bought = new EventEmitter<string>();
 
-  get productName(): string {
-    console.log(`Get ${this.name}`);
-    return this.name;
-  }
-
   constructor() {
     console.log(`name is ${this.name} in the constructor.`)
   }
