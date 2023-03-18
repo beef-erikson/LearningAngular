@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input,
   OnInit, Output, OnChanges, SimpleChanges } from '@angular/core';
+import { Product } from '../product'
 
 @Component({
   selector: 'app-product-detail',
@@ -9,27 +10,27 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input,
 })
 
 export class ProductDetailComponent implements OnInit, OnChanges {
-  @Input() name = '';
+  @Input() product: Product | undefined;
   @Output() bought = new EventEmitter<string>();
 
   constructor() {
-    console.log(`name is ${this.name} in the constructor.`)
+    console.log(`name is ${this.product?.name} in the constructor.`)
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const product = changes['name'];
-    const oldValue = product.previousValue;
-    const newValue = product.currentValue;
+    const product = changes['product'];
+    const oldValue = product.previousValue?.name;
+    const newValue = product.currentValue.name;
     if (!product.firstChange) {
       console.log(`Product changed from ${oldValue} to ${newValue}`)
     }
   }
 
   ngOnInit(): void {
-    console.log(`name is ${this.name} in the ngOnInit().`)
+    console.log(`name is ${this.product?.name} in the ngOnInit().`)
   }
 
   buy() {
-    this.bought.emit(this.name)
+    this.bought.emit(this.product?.name)
   }
 }
