@@ -9,6 +9,7 @@ import { Component, OnDestroy } from '@angular/core';
 export class AppComponent implements OnDestroy {
   title = 'Learning Angular';
   description = 'Hello World';
+  today = new Date();
 
   ngOnDestroy() {
   }
