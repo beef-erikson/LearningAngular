@@ -6,11 +6,16 @@
 </ul>
 
 <app-product-detail
-  *ngIf="selectedProduct; else noProduct"
+  *ngIf="selectedProduct;"
   [product]="selectedProduct"
   (bought)="onBuy($event)">
 </app-product-detail>
 
+<h3>Offers</h3>
+<ng-template appProductHost></ng-template>
+
+<!--
 <ng-template #noProduct>
   <p>No product selected.</p>
 </ng-template>
+-->
