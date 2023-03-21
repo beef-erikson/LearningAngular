@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ProductsModule } from "./products/products.module";
 import {FilterPipe} from "./products/filter.pipe";
 import { CopyrightDirective } from './copyright.directive';
-import { NumericDirective } from './numeric.directive';
+import { NumericDirective } from "./numeric.directive";
 
 
 @NgModule({
