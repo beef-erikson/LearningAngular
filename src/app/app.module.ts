@@ -7,6 +7,7 @@ import {FilterPipe} from "./products/filter.pipe";
 import { CopyrightDirective } from './copyright.directive';
 import { NumericDirective } from "./numeric.directive";
 import { PermissionDirective } from './permission.directive';
+import {AutofocusDirective} from "./autofocus.directive";
 
 
 @NgModule({
@@ -14,12 +15,13 @@ import { PermissionDirective } from './permission.directive';
     AppComponent,
     CopyrightDirective,
     NumericDirective,
-    PermissionDirective
+    PermissionDirective,
   ],
   imports: [
     BrowserModule,
     ProductsModule,
-    FilterPipe
+    FilterPipe,
+    AutofocusDirective
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,6 @@
-<p>{{today | date:'fullDate'}}</p>
 <div *appPermission="['admin', 'agent']">
-<app-product-list></app-product-list>
-
-<p>Enter a number <input appNumeric /></p>
+<p>{{today | date:'fullDate'}}</p>
 </div>
+<app-product-list></app-product-list>
+<p>Enter a number <input appNumeric /></p>
 <p appCopyright></p>
