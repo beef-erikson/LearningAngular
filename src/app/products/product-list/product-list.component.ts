@@ -8,7 +8,7 @@ import { SortPipe } from "../sort.pipe";
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
-  providers: [ProductsService]
+  viewProviders: [ProductsService]
 })
 
 export class ProductListComponent implements OnInit, AfterViewInit{
