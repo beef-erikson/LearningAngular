@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-view',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-view.component.css']
 })
 export class ProductViewComponent {
-
+  @Input() id = -1;
 }
