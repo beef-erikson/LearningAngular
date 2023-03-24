@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from "rxjs";
+import {from, Observable} from "rxjs";
 import {DatePipe} from "@angular/common";
 import {dateTimestampProvider} from "rxjs/internal/scheduler/dateTimestampProvider";
 
@@ -30,6 +30,7 @@ export class AppComponent {
   }
 
   constructor() {
-    this.title$.subscribe(this.setTitle);
+    const complete$ = from(this.onComplete());
+    complete$.subscribe(this.setTitle);
   }
 }
