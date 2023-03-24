@@ -8,6 +8,6 @@ export function favoritesFactory(isFavorite: boolean)
       return new FavoritesService();
     }
 
-    return new ProductsService()
+    return new ProductsService();
   };
 }
