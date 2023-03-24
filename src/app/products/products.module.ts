@@ -7,6 +7,8 @@ import { SortPipe } from './sort.pipe';
 import { ProductHostDirective } from './product-host.directive';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ProductViewComponent } from './product-view/product-view.component';
+import {ɵEmptyOutletComponent} from "@angular/router";
+import {AppModule} from "../app.module";
 
 
 @NgModule({

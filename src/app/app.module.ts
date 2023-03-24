@@ -11,19 +11,22 @@ import {AutofocusDirective} from "./autofocus.directive";
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CopyrightDirective,
-    NumericDirective,
-    PermissionDirective,
-  ],
-  imports: [
-    BrowserModule,
-    ProductsModule,
-    FilterPipe,
-    AutofocusDirective
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        CopyrightDirective,
+        NumericDirective,
+        PermissionDirective,
+    ],
+    imports: [
+        BrowserModule,
+        ProductsModule,
+        FilterPipe,
+        AutofocusDirective
+    ],
+    providers: [],
+    exports: [
+        AppComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
