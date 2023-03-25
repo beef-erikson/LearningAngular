@@ -2,7 +2,6 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ProductDetailComponent } from "../product-detail/product-detail.component";
 import {Product} from "../product";
 import { ProductsService } from "../products.service";
-import { SortPipe } from "../sort.pipe";
 
 @Component({
   selector: 'app-product-list',
@@ -20,10 +19,13 @@ export class ProductListComponent implements OnInit, AfterViewInit{
 
   constructor(private productService: ProductsService) {}
 
+  private getProducts() {
+    this.productService.getProducts().subscribe(products => {
+      this.products = products;
+    })
+  }
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
-    const sortPipe = new SortPipe();
-    setTimeout(() => { this.products = sortPipe.transform(this.products) });
+    this.getProducts();
   }
 
   ngAfterViewInit(): void {

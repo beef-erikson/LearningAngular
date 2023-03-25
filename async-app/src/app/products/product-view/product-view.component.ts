@@ -13,11 +13,14 @@ export class ProductViewComponent implements OnInit {
   name = '';
   constructor(private productViewService: ProductViewService) {}
 
+  private getProduct() {
+    this.productViewService.getProduct(this.id).subscribe(product => {
+      if (product) {
+        this.name = product.name;
+      }
+    });
+  }
   ngOnInit(): void {
-    const product = this.productViewService.getProduct(this.id);
-    
-    if (product) {
-      this.name = product.name;
-    }
+    this.getProduct();
   }
 }
