@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular
 import { ProductDetailComponent } from "../product-detail/product-detail.component";
 import { Product } from "../product";
 import { ProductsService } from "../products.service";
-import { Subscription } from "rxjs";
+import { Subscription, Observable } from "rxjs";
 
 @Component({
   selector: 'app-product-list',
@@ -13,7 +13,7 @@ import { Subscription } from "rxjs";
 
 export class ProductListComponent implements OnDestroy, OnInit, AfterViewInit{
   selectedProduct: Product | undefined;
-  products: Product[] = [];
+  products$: Observable<Product[]> | undefined;
   private productsSub: Subscription | undefined;
 
   @ViewChild(ProductDetailComponent) productDetail:
@@ -41,8 +41,6 @@ export class ProductListComponent implements OnDestroy, OnInit, AfterViewInit{
   }
 
   private getProducts() {
-    this.productsSub = this.productService.getProducts().subscribe(products => {
-      this.products = products;
-    })
+    this.products$ = this.productService.getProducts();
   }
 }
